@@ -1,13 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import AuthCheck from './src/pages/AuthCheck';
 import { StyleSheet, Text, View } from 'react-native';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>test</Text>
-      <StatusBar style="auto" />
-    </View>
+     <NavigationContainer>
+      <Stack.Navigator initialRouteName="AuthCheck">
+        <Stack.Screen name="AuthCheck" component={AuthCheck} />
+      </Stack.Navigator>
+    </NavigationContainer>
+
   );
 }
 
